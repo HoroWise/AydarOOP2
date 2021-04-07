@@ -135,11 +135,11 @@ int main()
 	{
 		printf("Point t;\n");
 		Point t;
-		printf("\nt.move(8, 5);\n");
-		t.move(8, 5);
+		printf("\nt.move(1, 5);\n");
+		t.move(1, 5);
 
-		printf("\nPoint t1(2, 5);\n");
-		Point t1(2, 5);
+		printf("\nPoint t1(2, 8);\n");
+		Point t1(2, 8);
 
 		printf("\nPoint t2(t1);\n");
 		Point t2(t1);
@@ -149,8 +149,8 @@ int main()
 		printf("\nPoint* t01 = new Point();\n");
 		Point* t01 = new Point();
 
-		printf("\nPoint* t02 = new Point(3, 6);\n");
-		Point* t02 = new Point(3, 6);
+		printf("\nPoint* t02 = new Point(3, 11);\n");
+		Point* t02 = new Point(3, 11);
 
 		printf("\nPoint* t03 = new Point(*tochka02);\n");
 		Point* t03 = new Point(*t02);
@@ -162,7 +162,7 @@ int main()
 		printf("\n'delete tochka03;'");
 		delete t03;
 	}
-	printf("Взаимодействие с классом Point3D \n\n");
+	printf("\n\nВзаимодействие с классом Point3D \n\n");
 	{
 		printf("\nPoint3D p1;\n");
 		Point3D p1;
@@ -170,10 +170,21 @@ int main()
 		printf("\nPoint* p2 = new Point3D(1, 2, 3);\n");
 		Point* p2 = new Point3D(1, 2, 3);
 
-		printf("\np1.move(2, 4, 5);\n");
-		p1.move(2, 4, 5);
+		printf("\np1.move(7, 8, 3);\n");
+		p1.move(7, 8, 3);
 
 		printf("\ndelete p2;");
 		delete p2;
+	}
+	printf("\n\nВзаимодействие с классом Line \n\n");
+	{
+		printf("\nLine line1(4, 5, 9, 5);\n");
+		Line line1(4, 5, 9, 5);
+
+		printf("\nline1.length_line();\n");
+		line1.length_line();
+
+		printf("\nLine line2(line1);\n");
+		Line line2(line1);
 	}
 }
