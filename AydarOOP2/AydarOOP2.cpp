@@ -85,5 +85,50 @@ public:
 
 int main()
 {
-    
+	setlocale(0, "");
+	printf("Взаимодействие с классом Point \n\n");
+	{
+		printf("Point t;\n");
+		Point t;
+		printf("\nt.move(8, 5);\n");
+		t.move(8, 5);
+
+		printf("\nPoint t1(2, 5);\n");
+		Point t1(2, 5);
+
+		printf("\nPoint t2(t1);\n");
+		Point t2(t1);
+		printf("\nt2.reset();\n");
+		t2.reset();
+
+		printf("\nPoint* t01 = new Point();\n");
+		Point* t01 = new Point();
+
+		printf("\nPoint* t02 = new Point(3, 6);\n");
+		Point* t02 = new Point(3, 6);
+
+		printf("\nPoint* t03 = new Point(*tochka02);\n");
+		Point* t03 = new Point(*t02);
+
+		printf("\ndelete tochka01;");
+		delete t01;
+		printf("\ndelete tochka02;");
+		delete t02;
+		printf("\n'delete tochka03;'");
+		delete t03;
+	}
+	printf("Взаимодействие с классом Point3D \n\n");
+	{
+		printf("\nPoint3D p1;\n");
+		Point3D p1;
+
+		printf("\nPoint* p2 = new Point3D(1, 2, 3);\n");
+		Point* p2 = new Point3D(1, 2, 3);
+
+		printf("\np1.move(2, 4, 5);\n");
+		p1.move(2, 4, 5);
+
+		printf("\ndelete p2;");
+		delete p2;
+	}
 }
