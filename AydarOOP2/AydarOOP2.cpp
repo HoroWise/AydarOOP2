@@ -3,9 +3,9 @@
 using namespace std; 
 
 class Point {
-protected:
-	int x, y;
 public:
+	int x, y;
+
 	Point() {
 		x = 0;
 		y = 0;
@@ -80,6 +80,51 @@ public:
 	~Point3D() {
 		printf("\nЗапуск деструктора у класса Point3D\n");
 		printf("Последние координаты точки (%d;%d;%d)\n", x, y, z);
+	}
+};
+
+class Line {
+public:
+	Point* p1;
+	Point* p2;
+
+	Line() {
+		p1 = new Point();
+		p2 = new Point();
+		printf("Запуск конструктора по умолчанию у класса Line\n");
+		printf("Координаты точки p1(%d;%d) p2(%d;%d)\n", p1->x, p1->y, p2->x, p2->y);
+	}
+
+	Line(int x1, int y1, int x2, int y2) {
+		p1 = new Point(x1, y1);
+		p2 = new Point(x2, y2);
+		printf("Запуск конструктора c параметрами у класса Line\n");
+		printf("Координаты точки p1(%d;%d) p2(%d;%d)\n", p1->x, p1->y, p2->x, p2->y);
+	}
+
+	Line(const Line& l) {
+		p1 = new Point(*(l.p1));
+		p2 = new Point(*(l.p2));
+		printf("Запуск конструктора копирования у класса Line\n");
+		printf("Координаты точки p1(%d;%d) p2(%d;%d)\n", p1->x, p1->y, p2->x, p2->y);
+
+	}
+
+	void length_line() { 
+		int a, b;
+		double length;
+		a = (p1->x) - (p2->x);
+		b = (p1->y) - (p2->y);
+		length = sqrt(a * a + b * b);
+		printf("Координаты точек p1(%d;%d) p2(%d;%d)\n", p1->x, p1->y, p2->x, p2->y);
+		printf("Длина линии = %.2f\n", length);
+
+	}
+	~Line() {
+		printf("\nЗапуск деструктора у класса Line\n");
+		printf("Координаты точки p1(%d;%d) p2(%d;%d)\n", p1->x, p1->y, p2->x, p2->y);
+		delete p1;
+		delete p2;
 	}
 };
 
