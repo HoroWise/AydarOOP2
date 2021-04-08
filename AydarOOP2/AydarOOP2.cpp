@@ -167,11 +167,11 @@ int main()
 		printf("\nPoint3D p1;\n");
 		Point3D p1;
 
-		printf("\nPoint* p2 = new Point3D(1, 2, 3);\n");
-		Point* p2 = new Point3D(1, 2, 3);
-
 		printf("\np1.move(7, 8, 3);\n");
 		p1.move(7, 8, 3);
+
+		printf("\nPoint* p2 = new Point3D(1, 2, 3);\n");
+		Point* p2 = new Point3D(1, 2, 3);
 
 		printf("\ndelete p2;");
 		delete p2;
